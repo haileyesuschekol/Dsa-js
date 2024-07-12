@@ -5,11 +5,9 @@ const chunk = (data, chunkSize) => {
   for (let element of data) {
     const last = chunked[chunked.length - 1]
 
-    if (!last || last.length === chunkSize) {
-      chunked.push([element])
-    } else {
-      last.push(element)
-    }
+    !last || last.length === chunkSize
+      ? chunked.push([element])
+      : last.push(element)
   }
   console.log(chunked)
 }
